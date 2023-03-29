@@ -10,7 +10,7 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
-
+$ruta = get_template_directory_uri();
 ?>
 	</main><!-- #main -->
 	
@@ -72,5 +72,81 @@
 
 <?php wp_footer(); ?>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+  <!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYe_l9viV0LlwhjyLeS-jRCn95fGYW4lI" defer></script-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js'></script>
+   <script src="<?php echo get_template_directory_uri()?>/js/app.js" defer></script>
+    <script src="<?php echo get_template_directory_uri()?>/js/scripts.js" defer></script>
+    <script src="<?php echo get_template_directory_uri()?>/js/lib.js" defer></script>
+    <script src="<?php echo get_template_directory_uri()?>/js/vndr.js" defer></script>
+ <script >
+
+let ejecutado = false; // indicador booleano
+
+
+let ruta_obj =  {}
+ruta_obj.ruta = "<?php echo $ruta;?>"
+console.log(ruta_obj)
+
+function miFuncion(link) {
+
+  
+  
+    ejecutado = true; // cambiar el indicador a verdadero
+    var newTab=  window.location.replace("/services/index.html", "self");
+    newTab.location.reload();
+  
+}
+
+function miFuncion2(link) {
+  
+  
+  
+    ejecutado = true; // cambiar el indicador a verdadero
+    var newTab=  window.location.replace("/about/index.html", "self");
+    newTab.location.reload();
+  
+}
+
+
+
+// var swiper = new Swiper(".swiper-container", {
+//   effect: "coverflow",
+//   loop:true,
+//   grabCursor: true,
+//   centeredSlides: true,
+//   slidesPerView: "auto",
+//   coverflowEffect: {
+//     rotate: 20,
+//     stretch: 0,
+//     depth: 350,
+//     modifier: 1,
+//     slideShadows: true
+//   },
+//   autoplay: {
+// 	  delay: 3000,
+// 	  disableOnInteraction: false,
+// 	},
+//   pagination: {
+//     el: ".swiper-pagination"
+//   }
+// });
+
+// document.querySelector(".hamburguer").addEventListener("click", function(){
+// 	document.querySelector("#b--nv").classList.toggle("active");
+// 	document.querySelector(".hamburguer").classList.toggle("close-hamburguer");
+// });
+
+
+// $(document).ready(function() {
+//   if ($("#js-nv").css("opacity") == "1") {
+//     $(".hamburguer").css("opacity", "1");
+//   } else {
+//     $(".hamburguer").css("opacity", "0");
+//   }
+// });
+  </script>
+  
 </body>
 </html>

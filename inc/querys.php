@@ -1,8 +1,8 @@
 <?php 
 
-function get_top_courses(){
+function get_all_products(){
   $args = array(
-    'post_type' => 'cursos',
+    'post_type' => 'our_products',
     'posts_per_page' => -1
   );
   
@@ -12,63 +12,25 @@ function get_top_courses(){
     while ($query->have_posts()) {
       $query->the_post();
       // aquí puedes imprimir el contenido de cada producto
-      // por ejemplo, el título del producto y su imagen destacada
-      $isTop = get_field('top_curso');
+      // por ejemplo, el título del producto y su imagen destacada     
       $post_slug = get_post_field( 'post_name', get_the_ID() );
-      if ($isTop == 1){
+      $img = get_field("image")['url']
       ?>
+     
       
-      <div class="px-2 flex-grow-0 flex-shrink-0 basis-[100%] sm:basis-[50%] lg:basis-[33.33%] mt-4 ">
-        <div class="rounded-lg flex flex-col w-full  overflow-hidden shadow-xl shadow-neutral-100">
-          <div class="w-full h-auto aspect-[11/6] ">
-            <img class="max-w-full min-w-full w-full h-full" src="<?php echo get_field('banner')['url']?>">
+      <div class="wa--one">
+        <button
+          class="wa--one__tgt c--fic h--sww js-wd-hit"
+          type="button"
+          aria-label=""
+        >
+          <div class="wa--one__img h--sww__i">
+            <div
+              class="c--bg js-bg"
+              data-src='{"sp":"<?php echo $img;?>","pc":"<?php echo $img;?>","retina":"<?php echo $img;?>","mq":"1025"}'
+            ></div>
           </div>
-          <div class="w-full p-4 flex flex-col">
-            <h3 class="font-semibold mb-4 capitalize"><?php the_title(); ?></h3>
-            <p class="text-sm mb-4"><?php echo get_field('descripcion_corta_curso')?></p>            
-            <div class="flex flex-row justify-between items-center">
-              <span class="text-xs"><?php echo get_field('horas') . ' horas'?></span>
-              <a href="<?php echo $post_slug;?>" class="border border-yellow-300 py-2 px-8 text-sm bg-yellow-50 text-txt-amarillo rounded-full">Ver Curso</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <?php }?>
-        <?php the_post_thumbnail(); ?>
-      <?php
-    }
-    wp_reset_postdata();
-  }
-}
-
-function list_all_courses(){
-  $args = array(
-    'post_type' => 'cursos',
-    'posts_per_page' => 100
-  );
-  $query = new WP_Query($args);
-
-  if ($query->have_posts()) {
-    while ($query->have_posts()) {
-      $query->the_post();
-      $curso_url = get_permalink();
-    
-      ?>
-      
-      <div class="px-2 flex-grow-0 flex-shrink-0 basis-[100%] sm:basis-[50%] lg:basis-[33.33%] mt-4 ">
-        <div class="rounded-lg flex flex-col w-full  overflow-hidden shadow-xl shadow-neutral-100">
-          <div class="w-full h-auto aspect-[11/6] ">
-            <img class="max-w-full min-w-full w-full h-full" src="<?php echo get_field('banner')['url']?>">
-          </div>
-          <div class="w-full p-4 flex flex-col">
-            <h3 class="font-semibold mb-4 capitalize"><?php the_title(); ?></h3>
-            <p class="text-sm mb-4"><?php echo get_field('descripcion_corta_curso')?></p>            
-            <div class="flex flex-row justify-between items-center">
-              <span class="text-xs"><?php echo get_field('horas') . ' horas'?></span>
-              <a href="<?php echo $curso_url;?>" class="border border-yellow-300 py-2 px-8 text-sm bg-yellow-50 text-yellow-500 rounded-full">Ver Curso</a>
-            </div>
-          </div>
-        </div>
+        </button>
       </div>
         <?php the_post_thumbnail(); ?>
       <?php
@@ -77,198 +39,139 @@ function list_all_courses(){
   }
 }
 
-function list_all_alumnos(){
+function get_all_products_for_modal(){
   $args = array(
-    'post_type' => 'alumnos',
+    'post_type' => 'our_products',
     'posts_per_page' => -1
-  );
-  $query = new WP_Query($args);
-
-  if ($query->have_posts()) {
-    while ($query->have_posts()) {
-      $query->the_post();
-      $curso_url = get_permalink();
-    
-      ?>
-      
-      <div class="px-2 flex-grow-0 flex-shrink-0 basis-[100%] sm:basis-[50%] lg:basis-[33.33%] mt-4 max-w-[300px]">
-        <a href="<?php echo get_permalink();?>">
-          <div class="rounded-lg flex flex-col w-full  overflow-hidden shadow-xl shadow-neutral-100">
-            <div class="w-full h-auto aspect-square max-h-[300px] ">
-              <img class="max-w-full min-w-full w-full h-full object-cover object-center" src="<?php echo get_field('foto')['url']?>">
-            </div>
-            <div class="w-full p-4 flex flex-col bg-white">
-              <h3 class="font-semibold mb-4 w-full text-center text-base capitalize"><?php the_title(); ?></h3>
-              <p class="text-sm  w-full text-center"><?php echo get_field('profesion')?></p> 
-            </div>
-          </div>
-        </a>
-      </div>
-        <?php the_post_thumbnail(); ?>
-      <?php
-    }
-    wp_reset_postdata();
-  }
-}
-
-
-function get_instructors(){
-  $args = array(
-    'post_type' => 'profesores',
-    'posts_per_page' => 6
   );
   
   $query = new WP_Query($args);
   
   if ($query->have_posts()) {
     while ($query->have_posts()) {
-      $query->the_post();      
-      ?>      
-      <div class="px-2 flex-grow-0 flex-shrink-0 basis-[100%] sm:basis-[50%] lg:basis-[33.33%] mt-4 ">
-        <div class="rounded-lg flex flex-col w-full  overflow-hidden shadow-xl shadow-neutral-100">
-          <div class="w-full h-auto aspect-[11/6] max-h-[350px] ">
-            <img class="max-w-full min-w-full w-full h-full object-cover object-center" src="<?php echo get_field('foto')['url']?>">
-          </div>
-          <div class="w-full p-4 flex flex-col bg-white">
-            <h3 class="font-semibold mb-4 w-full text-center"><?php the_title(); ?></h3>
-            <p class="text-sm  w-full text-center"><?php echo get_field('profesion')?></p> 
+      $query->the_post();
+      // aquí puedes imprimir el contenido de cada producto
+      // por ejemplo, el título del producto y su imagen destacada     
+      $post_slug = get_post_field( 'post_name', get_the_ID() );
+      $img = get_field("image")['url'];
+      $link = get_field("link");
+      $array = explode('*', get_field("description"));
+      $string = '';
+      foreach ($array as $key) { 
+        $string .= $key . "</br>";
+      }
+      ?>
+  
+      <div class="wm--hd js-wd-one">
+        <div class="wm--hd__fig">
+          <div class="wm--hd__img c--fic">
+            <div
+              class="c--bg js-bg"
+              data-src='{"sp":"<?php echo $img;?>","pc":"<?php echo $img;?>","retina":"<?php echo $img;?>","mq":"1025"}'
+            ></div>
           </div>
         </div>
-      </div>
-     
-        <?php the_post_thumbnail(); ?>
-      <?php
-    }
-    wp_reset_postdata();
-  }
-}
-
-function get_alumnos_from_course($slug_curso){
-  $args = array(
-    'post_type' => 'alumnos',
-    'posts_per_page' => -1
-  );
-
-  $query = new WP_Query($args);
-
-  if ($query->have_posts()) {
-    while ($query->have_posts()) {
-      $query->the_post();  
-      $post_slug = get_post_field( 'post_name', get_the_ID() ); // Obtener el slug del post
-
-     
-     foreach (get_field('cursos_realizados') as $array) { ?>
-    
-      <?php if($array['curso'][0]->post_name == $slug_curso){
-      ?>
-      
-    
-       
-      
-      <div class="px-2 flex-grow-0 flex-shrink-0 basis-[100%] sm:basis-[50%] lg:basis-[33.33%] mt-4 max-w-[300px]">
-        <a href="<?php echo get_permalink();?>">
-          <div class="rounded-lg flex flex-col w-full  overflow-hidden shadow-xl shadow-neutral-100">
-            <div class="w-full h-auto aspect-square max-h-[300px] ">
-              <img class="max-w-full min-w-full w-full h-full object-cover object-center" src="<?php echo get_field('foto')['url']?>">
-            </div>
-            <div class="w-full p-4 flex flex-col bg-white">
-              <h3 class="font-semibold mb-4 w-full text-center text-base capitalize"><?php the_title(); ?></h3>
-              <p class="text-sm  w-full text-center"><?php echo get_field('profesion')?></p> 
-            </div>
-          </div>
-        </a>
-      </div>
-      <?php }} ?>
-        <?php the_post_thumbnail(); ?>
-      <?php
-    }
-    wp_reset_postdata();
-  }
-}
-
-function get_certificados_by_alumno($slug_alumno){
-  $args = array(
-    'post_type' => 'alumnos',
-    'posts_per_page' => -1
-  );
-
-  $query = new WP_Query($args);
-
-  if ($query->have_posts()) {
-    while ($query->have_posts()) {
-      $query->the_post();  
-      $post_slug = get_post_field( 'post_name', get_the_ID() ); // Obtener el slug del post
-     
-     
-     foreach (get_field('cursos_realizados') as $array) { 
-      $titulo_curso = $array['curso'][0]->post_title;
-      $archivo = $array['archivo_certificado']['icon'];
-      $url_archivo = $array['archivo_certificado']['url'];
-      $filename_archivo = $array['archivo_certificado']['filename'];
-      
-      if($slug_alumno == $post_slug){
-      ?>
-      
-      <div class="px-2 flex-grow-0 flex-shrink-0 basis-[100%] sm:basis-[50%] lg:basis-[33.33%] mt-4 max-w-[400px] ">      
-        <div class="rounded-lg flex flex-col w-full  overflow-hidden shadow-xl shadow-neutral-100 justify-center items-center">
-          <div class="w-full h-auto aspect-square max-h-[300px] ">
-            <a target="__blank" href="<?php echo $url_archivo;?>">
-              <div class="max-w-full min-w-full w-full h-auto object-cover object-center flex justify-center items-center" id="<?php echo $filename_archivo; ?>"></div>
+        <div class="wm--hd__meta">
+          <p class="wm--hd__ttl f--srf"><?php echo get_field("name")?></p>
+          <p class="wm--hd__de">
+            <?php echo $string;?>
+          </p>
+          <div class="wm--hd__btn">
+            <a
+              class="wm--hd__btn__tgt js-hv"
+              href="<?php echo $link?>"
+              target="_blank"
+              data-hv="btn"
+            >
+              <p class="wm--hd__btn__lab f--en">Official</p>
+              <div class="wm--hd__btn__ico c--fic">
+                <span class="wm--hd__btn__b c--fic">
+                  <svg class="c--sg" viewBox="0 0 18 18">
+                    <polygon
+                      class="_bg"
+                      points="9,0 8.4,0.7 16.1,8.4 0,8.4 0,9.4 16.2,9.4 8.4,17.3 9,18 18,9"></polygon>
+                  </svg>
+                </span>
+                <span class="wm--hd__btn__f c--fic -i">
+                  <span class="m--btn__ico__fi -i">
+                    <svg class="c--sg" viewBox="0 0 18 18">
+                      <path
+                        class="_st"
+                        d="M0,9h18"
+                        clip-path="url(#__btnArrow)"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
             </a>
           </div>
-          <div class="w-full p-4 flex flex-col bg-white">
-            <p class="text-sm  w-full text-center mb-2">Certificado en:</p> 
-            <h3 class="font-semibold w-full text-center text-base capitalize"><?php echo $titulo_curso ?></h3>
-          </div>
         </div>
       </div>
+        <?php the_post_thumbnail(); ?>
+      <?php
+    }
+    wp_reset_postdata();
+  }
+}
 
 
-      <script>
-        window.addEventListener('load', function () {
-          let url = '<?php echo esc_js( $url_archivo );?>';
-          let id = '<?php echo esc_js( $filename_archivo );?>';
-          // Reemplaza 'archivo_pdf' con el nombre del campo personalizado donde se guarda la ruta del archivo PDF en la página de WordPress
-          var pdfDoc = null,
-              pageNum = 1,
-              pageRendering = false,
-              pageNumPending = null,
-              scale = 0.4,
-              canvas = document.createElement('canvas'),
-              ctx = canvas.getContext('2d');
 
-          function renderPage(num) {
-              pageRendering = true;
-              pdfDoc.getPage(num).then(function(page) {
-                  var viewport = page.getViewport({scale: scale});
-                  canvas.height = viewport.height;
-                  canvas.width = viewport.width;
-                  var renderContext = {
-                      canvasContext: ctx,
-                      viewport: viewport
-                  };
-                  var renderTask = page.render(renderContext);
-                  renderTask.promise.then(function() {
-                      pageRendering = false;
-                      if (pageNumPending !== null) {
-                          renderPage(pageNumPending);
-                          pageNumPending = null;
-                      }
-                  });
-              });
-              document.getElementById(id).appendChild(canvas);
-          }
+function get_all_services_swiper_slide(){
+  $args = array(
+    'post_type' => 'our_services',
+    'posts_per_page' => -1
+  );
+  
+  $query = new WP_Query($args);
+  
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $query->the_post();
+      // aquí puedes imprimir el contenido de cada producto
+      // por ejemplo, el título del producto y su imagen destacada     
+      $post_slug = get_post_field( 'post_name', get_the_ID() );
+     
+      ?>
+  
+        <div class="swiper-slide swiper-slide--one" style="background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url(<?php echo get_field("image")["url"]?>) no-repeat 50% 50%/cover;">
+          <div class="mitexto">
+            <h2 class="t1"><?php echo the_title();?></h2>
+            <p class="t2"><?php echo get_field("description");?></p>
+            
+          </div>
+        </div>
+        <?php the_post_thumbnail(); ?>
+      <?php
+    }
+    wp_reset_postdata();
+  }
+}
 
-          pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-              pdfDoc = pdfDoc_;
-              for (var i = 1; i <= pdfDoc.numPages; i++) {
-                  renderPage(i);
-              }
-          });
-
-        })
-      </script>
-      <?php }} ?>
+function get_swiper_view_content(){
+  $args = array(
+    'post_type' => 'our_services',
+    'posts_per_page' => -1
+  );
+  
+  $query = new WP_Query($args);
+  $i = 0;
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $i++;
+      $query->the_post();
+      // aquí puedes imprimir el contenido de cada producto
+      // por ejemplo, el título del producto y su imagen destacada     
+      $post_slug = get_post_field( 'post_name', get_the_ID() );
+     
+      ?>
+  
+        <li class="team-info-item <?php echo $i === 1 ? 'active' : '' ?>">
+          <h1 class="heading"><?php echo the_title();?> </h1>
+          <article class="content">
+              <p>
+                <?php echo get_field("description")?></p>
+          </article>
+        </li>
         <?php the_post_thumbnail(); ?>
       <?php
     }

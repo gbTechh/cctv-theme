@@ -47,9 +47,9 @@ class CCTV {
 	 * @return array
 	 */
 	public function body_classes( $classes ) {
-		global $cursosqr_version;
+		global $cctv_version;
 
-		if ( version_compare( $cursosqr_version, '2.3.0', '>=' ) ) {
+		if ( version_compare( $cctv_version, '2.3.0', '>=' ) ) {
 			$classes[] = '';
 		}
 
@@ -57,26 +57,34 @@ class CCTV {
 	}
 
 	public function enqueue_styles() {
-	
-		global $cursosqr_version;
+		global $cctv_version;
  
-		wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', $cursosqr_version );
-		wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/all.css', $cursosqr_version );
-		wp_enqueue_style('footer-css', get_template_directory_uri() . '/css/footer.css', $cursosqr_version );
-		wp_enqueue_style('style2', get_template_directory_uri() . '/css/style2.css', $cursosqr_version );
+		wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css',  );
+		wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/all.css', $cctv_version );
+		wp_enqueue_style('footer-css', get_template_directory_uri() . '/css/footer.css', $cctv_version );
+		wp_enqueue_style('style2', get_template_directory_uri() . '/css/style2.css', $cctv_version );
    
 	}
 	
 	public function enqueue_scripts() {
-		global $cursosqr_version;
+		global $cctv_version;
  
 		
-		wp_enqueue_script('tilt', get_template_directory_uri() . '/js/til.jquery.min.js', array('jquery'), $cursosqr_version, false);
-		wp_enqueue_script('swiper', get_template_directory_uri() . '/js/swiper.min.js', array('jquery','tilt'), $cursosqr_version, false);
-		wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery', 'tilt', 'swiper'), $cursosqr_version, false);
-		wp_enqueue_script('lib', get_template_directory_uri() . '/js/lib.js', array('jquery', 'scripts'), $cursosqr_version, false, array('defer' => 'defer'));
-		wp_enqueue_script('vendor', get_template_directory_uri() . '/js/vndr.js', array('jquery','lib'), $cursosqr_version, false, array('defer' => 'defer'));
-		wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array('jquery', 'lib','vendor'), $cursosqr_version, false, array('defer' => 'defer'));
+		wp_enqueue_script('tilt', get_template_directory_uri() . '/js/til.jquery.min.js', array('jquery'), $cctv_version, false);
+		wp_enqueue_script('swiper', get_template_directory_uri() . '/js/swiper.min.js', array('jquery','tilt'), $cctv_version, false);
+		wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery', 'tilt', 'swiper'), $cctv_version, false);
+		// wp_enqueue_script('lib', get_template_directory_uri() . '/js/lib.js', array('jquery', 'scripts'), $cctv_version, true, array('defer' => 'defer'));
+		// wp_enqueue_script('vendor', get_template_directory_uri() . '/js/vndr.js', array('jquery','lib'), $cctv_version, true, array('defer' => 'defer'));
+		// wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js', array('jquery', 'lib','vendor'), $cctv_version, true, array('defer' => 'defer'));
+		// wp_enqueue_script('media-js', get_template_directory_uri() . '/assets/img/dev/media.js', array('jquery', 'lib','vendor'), $cctv_version, true, array('defer' => 'defer'));
+
+		wp_localize_script( 'app-js', 'ruta_obj', array(
+    	'ruta' => $ruta
+		));
+   
+		wp_localize_script( 'media-js', 'ruta_obj', array(
+    	'ruta' => $ruta
+		));
    
 	}
   

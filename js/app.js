@@ -303,25 +303,25 @@
                 constructor() {
                     this.textures = {
                         firstViewLoopText: {
-                            src: "/assets/webgl/first-view-loop-text.png",
+                            src: `${ruta_obj.ruta}/assets/webgl/first-view-loop-text.png`,
                             value: null,
                             isLoop: !0
                         },
                         aboutTitleArea: {
-                            src: "/assets/webgl/about-title-area.png",
+                            src: `${ruta_obj.ruta}/assets/webgl/about-title-area.png`,
                             value: null
                         },
                         workAll: {
-                            src: "/assets/webgl/work-all.png",
+                            src: `${ruta_obj.ruta}/assets/webgl/work-all.png`,
                             value: null,
                             isLoop: !0
                         },
                         about_sp: {
-                            src: "/assets/img/index/about-sp.png",
+                            src: `${ruta_obj.ruta}/assets/img/index/about-sp.png`,
                             value: null
                         },
                         about_pc: {
-                            src: "/assets/img/index/about.png",
+                            src: `${ruta_obj.ruta}/assets/img/index/about.png`,
                             value: null
                         }
                     }, this.videos = {}, this.cmsDatas = null, this.total = 0, this.count = 0, this.videoSize = new m.F(960, 540)
@@ -353,7 +353,7 @@
                     }
                 }
                 load() {
-                    fetch("/assets/img/dev/media.json", {
+                    fetch(`${ruta_obj.ruta}/assets/img/dev/media.json`, {
                         method: "GET"
                     }).then((t => t.json())).then((t => {
                         this.cmsDatas = t;

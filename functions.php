@@ -1,13 +1,17 @@
 <?php 
 
-$theme				= wp_get_theme( 'cursosqr' );
-$cursosqr_version	= $theme['Version'];
-
+$theme				= wp_get_theme( 'cctv' );
+$cctv_version	= $theme['Version'];
+$ruta = get_template_directory_uri();
 
 
 require_once( 'inc/class-cctv.php' );
 require_once( 'inc/class-css-cctv.php' );
 require get_template_directory() . '/inc/querys.php';
+
+add_filter('show_admin_bar', '__return_false');
+
+ 
 
 function cctv_the_html_classes() {
 	/**
@@ -131,3 +135,12 @@ function agregar_campos_identidad_sitio( $wp_customize ) {
 	) ) );
 }
 add_action( 'customize_register', 'agregar_campos_identidad_sitio' );
+
+
+function dd($value) {
+	
+	$pre = "<pre>";
+	$prend = "</pre>";
+
+	return $pre . var_dump($value) . $prend;
+}

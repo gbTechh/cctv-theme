@@ -1,102 +1,104 @@
 {
   "firstView": [
     {
-      "image": "/assets/uploads/iv1.png",
-      "video": "/assets/uploads/v1.mp4"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/iv1.png",
+      "video": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/v1.mp4"
     },
     {
-      "image": "/assets/uploads/iv2.png",
-      "video": "/assets/uploads/v2.mp4"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/iv2.png",
+      "video": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/v2.mp4"
     },
     {
-      "image": "/assets/uploads/iv3.png",
-      "video": "/assets/uploads/v3.mp4"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/iv3.png",
+      "video": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/v3.mp4"
     }
   ],
   "aboutVideos": [
-    { "video": "/assets/uploads/v4.mp4" },
     {
-      "video": "/assets/uploads/v5.mp4"
+      "video": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/v4.mp4"
     },
     {
-      "video": "/assets/uploads/v6.mp4"
+      "video": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/v5.mp4"
+    },
+    {
+      "video": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/v6.mp4"
     }
   ],
   "ourWork": [
     {
-      "image": "/assets/uploads/1.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/1.jpg"
     },
     {
-      "image": "/assets/uploads/2.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/2.jpg"
     },
     {
-      "image": "/assets/uploads/3.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/3.jpg"
     },
     {
-      "image": "/assets/uploads/4.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/4.jpg"
     },
     {
-      "image": "/assets/uploads/5.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/5.jpg"
     },
     {
-      "image": "/assets/uploads/6.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/6.jpg"
     },
     {
-      "image": "/assets/uploads/7.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/7.jpg"
     },
     {
-      "image": "/assets/uploads/8.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/8.jpg"
     },
     {
-      "image": "/assets/uploads/9.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/9.jpg"
     },
     {
-      "image": "/assets/uploads/10.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/10.jpg"
     },
     {
-      "image": "/assets/uploads/11.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/11.jpg"
     },
     {
-      "image": "/assets/uploads/12.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/12.jpg"
     },
     {
-      "image": "/assets/uploads/13.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/13.jpg"
     },
     {
-      "image": "/assets/uploads/14.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/14.jpg"
     },
     {
-      "image": "/assets/uploads/15.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/15.jpg"
     },
     {
-      "image": "/assets/uploads/16.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/16.jpg"
     },
     {
-      "image": "/assets/uploads/17.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/17.jpg"
     },
     {
-      "image": "/assets/uploads/18.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/18.jpg"
     },
     {
-      "image": "/assets/uploads/19.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/19.jpg"
     },
     {
-      "image": "/assets/uploads/20.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/20.jpg"
     },
     {
-      "image": "/assets/uploads/21.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/21.jpg"
     },
     {
-      "image": "/assets/uploads/22.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/22.jpg"
     },
     {
-      "image": "/assets/uploads/23.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/23.jpg"
     },
     {
-      "image": "/assets/uploads/24.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/24.jpg"
     },
     {
-      "image": "/assets/uploads/25.jpg"
+      "image": "http://localhost/cctv/wp-content/themes/cctv/assets/wp-content/uploads/2022/10/25.jpg"
     }
   ]
 }

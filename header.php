@@ -18,6 +18,10 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&amp;family=Noto+Sans+JP:wght@500&amp;family=Noto+Serif+JP:wght@500&amp;family=Poppins:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&amp;family=Noto+Sans+JP:wght@500&amp;family=Noto+Serif+JP:wght@500&amp;family=Poppins:wght@500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css'>
+
   
 	<?php wp_head(); ?>
 
@@ -165,15 +169,12 @@
 </head>
 
 <body <?php body_class(); ?>>
-<button class="b--hm " type="button" aria-label="Navigation Controlr" id="js-hm2">
-  <span class="b--hm__in">
-  <?php the_custom_logo('<div style="width: 200%;">','</div>'); ?>
-  </span>
-</button>
+
 <?php wp_body_open(); ?>
 <!--<?php get_template_part( 'template-parts/loading/loading' ); ?>-->
-<div id="page" class="prueba">	
+
 	<?php get_template_part( 'template-parts/header/header-front' ); ?>
+  
 
 
-	<main id="main" class="site-main">
+
